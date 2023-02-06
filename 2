@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Commission{
+    private double sales;
+    public Commission(double sales){
+        this.sales =sales;
+    }
+    public double getSales(){
+        return sales;
+    }
+    public void setSales(double sales){
+        this.sales = sales;
+    }
+    public double commission(){
+        return (sales * 0.1);
+    }
+}
+class CommissionDemo {
+     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Enter a sales value: ");
+         double sales = sc.nextDouble();
+         if(sales<0){
+             System.out.println("invalid input");
+         }else {
+             Commission commission = new Commission(sales);
+             double com = commission.commission();
+             System.out.println("the commission is: "+ com);
+         }
+     }
+}
